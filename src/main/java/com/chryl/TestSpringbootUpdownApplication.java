@@ -63,7 +63,7 @@ public class TestSpringbootUpdownApplication {
      * @return
      * @throws UnsupportedEncodingException
      */
-    @GetMapping("/down/{imgFile}")
+    @GetMapping("/downImg/{imgFile}")
     public String handleDownloadFile(@PathVariable String imgFile,//
                                      HttpServletResponse response) throws UnsupportedEncodingException {
         String path = "D:/test2";
@@ -82,12 +82,9 @@ public class TestSpringbootUpdownApplication {
     @Autowired
     private StorageServiceImpl storageService;
 
-    @GetMapping("/down/{txtFile}")
+    @GetMapping("/downTxt/{txtFile}")
     public ResponseEntity<Resource> serveFile(@PathVariable String txtFile) throws UnsupportedEncodingException {
-
-
         Resource file = storageService.loadAsResource(txtFile);
-        System.out.println(file.getFilename());
 
         return ResponseEntity
                 .ok()

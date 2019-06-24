@@ -148,7 +148,7 @@ public class FileUtil {
         }
     }
     */
-    public static String downloadFile(String path,String fileName, HttpServletResponse res) throws UnsupportedEncodingException {
+    public static String downloadFile(String path, String fileName, HttpServletResponse res) throws UnsupportedEncodingException {
         if (fileName == null) {
             return "false";
         }
@@ -156,8 +156,10 @@ public class FileUtil {
         //查看文件信息,存储路径
 
         res.setContentType("application/force-download");// 设置强制下载不打开
-        res.addHeader("Content-Disposition", "attachment;fileName=" +
-                new String(fileName.getBytes("gbk"), "iso8859-1"));// 设置文件名
+        res.addHeader("Content-Disposition", //
+                "attachment;fileName=" +
+                        new String(fileName.getBytes("gbk"), "iso8859-1"));// 设置文件名
+
         res.setHeader("Context-Type", "application/xmsdownload");
 
         //判断文件是否存在
