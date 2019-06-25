@@ -94,6 +94,7 @@ public class TestSpringbootUpdownApplication {
     }
 
     //day02@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
     /**
      * 下载 单个文件:txt或图片
      *
@@ -174,9 +175,9 @@ public class TestSpringbootUpdownApplication {
         }
     }
 
+    //自动关流
+    public static void autoSD(HttpServletResponse resp, String path) {
 
-    public static void autoSD(HttpServletResponse resp,String path) {
-        //自动关流
         byte[] buff = new byte[1024];
         File file = new File(path);
         try (
