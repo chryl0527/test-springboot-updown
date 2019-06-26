@@ -149,6 +149,8 @@ public class TestSpringbootUpdownApplication {
         String path = realPath + File.separator + name;
         File file = new File(path);
         resp.reset();
+        //通用的MIME类型,以流的形式下载文件,实现任意格式的文件下载.
+//        MIME(Multipurpose Internet Mail Extensions)多用途互联网邮件扩展类型。是设定某种扩展名的文件用一种应用程序来打开的方式类型，当该扩展名文件被访问的时候，浏览器会自动使用指定应用程序来打开。
         resp.setContentType("application/octet-stream");
         resp.setCharacterEncoding("utf-8");
         resp.setContentLength((int) file.length());

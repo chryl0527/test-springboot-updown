@@ -15,6 +15,13 @@
 <hr>
 <br>
 <p>多文件上传</p>
+<!--enctype：规定了form表单在发送到服务器时候编码方式，有如下的三个值。-->
+
+<!--1、application/x-www-form-urlencoded。默认的编码方式。但是在用文本的传输和MP3等大型文件的时候，使用这种编码就显得 效率低下。-->
+
+<!--2、multipart/form-data 。 指定传输数据为二进制类型，比如图片、mp3、文件。-->
+
+<!--3、text/plain。纯文体的传输。-->
 <form method="POST" enctype="multipart/form-data" action="batch">
     <p>文件1：<input type="file" name="fileName1"/></p>
     <p>文件2：<input type="file" name="fileName2"/></p>
