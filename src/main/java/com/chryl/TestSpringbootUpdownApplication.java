@@ -138,6 +138,7 @@ public class TestSpringbootUpdownApplication {
         String fileName = null;
         try {
             fileName = new String(downloadName.getBytes("GBK"), "ISO-8859-1");
+//            fileName = new String(downloadName.getBytes("UTF-8"), "ISO-8859-1");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
