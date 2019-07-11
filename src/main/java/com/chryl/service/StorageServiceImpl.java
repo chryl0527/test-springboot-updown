@@ -1,4 +1,4 @@
-package com.chryl.oth;
+package com.chryl.service;
 
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;

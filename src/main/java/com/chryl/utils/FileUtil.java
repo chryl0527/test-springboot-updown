@@ -1,4 +1,4 @@
-package com.chryl;
+package com.chryl.utils;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.multipart.MultipartFile;
