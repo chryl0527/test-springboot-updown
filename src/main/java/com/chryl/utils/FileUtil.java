@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * file工具类
+ * file上传下载工具类
  * <p>
  * Created By Chr on 2019/6/24.
  */
@@ -89,7 +89,7 @@ public class FileUtil {
     }
 
     /**
-     * 上传多个文件
+     * 上传多个文件:不改变文件名字
      *
      * @param path
      * @param f
