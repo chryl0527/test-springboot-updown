@@ -11,6 +11,7 @@ import javax.servlet.MultipartConfigElement;
 
 /**
  * springBoot配置虚拟化路径用于图片的展示
+ * 配置上传图片大小
  * <p>
  * Created By Chr on 2019/7/11.
  */
