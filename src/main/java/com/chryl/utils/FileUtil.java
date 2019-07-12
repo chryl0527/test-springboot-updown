@@ -16,17 +16,56 @@ import java.util.List;
  */
 @Slf4j
 public class FileUtil {
+    /**
+     * 格式化formatter名字上传
+     *
+     * @param file
+     * @param path
+     * @return
+     */
+    public static String upLoadFileReName(MultipartFile file, String path) {
+        if (file.isEmpty()) {
+            return "false";
+        }
+        //上传的源文件名字
+        String fileName = file.getOriginalFilename();
+        String newFileName = IDUtils.convertFileNameFromFormatName(fileName);
+
+        int size = (int) file.getSize();
+        System.out.println(newFileName + "上传成功-->大小:" + size);
+
+//        String path = "D:/test";
+        File dest = new File(path + "/" + newFileName);
+        if (!dest.getParentFile().exists()) { //判断文件父目录是否存在
+            dest.getParentFile().mkdir();
+        }
+        try {
+            file.transferTo(dest); //保存文件
+            return "true";
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("上传失败--------");
+            return "false";
+        }
+    }
 
     /**
-     * 单个文件上传
+     * 单个文件上传:原文件名上传
+     *
+     * @param file 前端的file
+     * @param path 存储本地的path
+     * @return
      */
     public static String upLoadFile(MultipartFile file, String path) {
         if (file.isEmpty()) {
             return "false";
         }
+        //上传的源文件名字
         String fileName = file.getOriginalFilename();
+//        String fileName = IDUtils.genImageName();
         int size = (int) file.getSize();
-        System.out.println(fileName + "-->" + size);
+        System.out.println(fileName + "上传成功-->" + size);
 
 //        String path = "D:/test";
         File dest = new File(path + "/" + fileName);
@@ -39,10 +78,12 @@ public class FileUtil {
         } catch (IllegalStateException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+            log.debug("上传失败--------");
             return "false";
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+            log.debug("上传失败--------");
             return "false";
         }
     }

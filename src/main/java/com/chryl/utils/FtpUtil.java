@@ -8,6 +8,8 @@ import org.apache.commons.net.ftp.FTPReply;
 import java.io.*;
 
 /**
+ * ftp上传下载
+ * <p>
  * Created By Chr on 2019/6/25.
  */
 public class FtpUtil {

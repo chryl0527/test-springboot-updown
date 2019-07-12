@@ -5,15 +5,22 @@
     <title>Title</title>
 </head>
 <body>
+<!-- controller -->
 <p>单个文件上传</p>
-<form action="fileUpload" enctype="multipart/form-data"
-      method="post">
+<form action="fileUpload" enctype="multipart/form-data" method="post">
     <p>上传文件1：<input type="file" name="fileName"><br/></p>
     <input type="submit" value="提交">
+</form>
+<!-- controller2 -->
+<p>上传文件2</p>
+<form action="pic/upload" enctype="multipart/form-data" method="post">
+    <p>上传文件1：<input type="file" name="uploadFile"><br/></p>
+    <input type="submit" value="提交2">
 </form>
 <br>
 <hr>
 <br>
+<!-- controller -->
 <p>多文件上传</p>
 <!--enctype：规定了form表单在发送到服务器时候编码方式，有如下的三个值。-->
 
