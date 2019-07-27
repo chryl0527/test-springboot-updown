@@ -14,7 +14,7 @@
 
 </div>
 <script>
-    var imgUrl = null;
+    var img_arr = [];
 
     $(function () {
         $.ajax({
@@ -23,7 +23,7 @@
             dataType: "json",
             success: function (data) {
                 if (data.status == "suc") {
-                    imgUrl = data.data;
+                    img_arr = data.data;
                     reloadDom();
                 } else {
                     alert("获取商品信息失败");
@@ -34,13 +34,13 @@
     function reloadDom() {
         /**
          * 不管http://127.0.0.1:8080/images/aqz.png 下是否有文件,
-         * 只要指定images路径下的图片,都会去虚拟路径下寻找图片
+         * 只要指定images路径下的图片,都会去虚拟路径下寻找图片:具体看sp的配置文件
          * */
-//        var dom = "<img style='width: 100px;height: auto' src='" + imgUrl + "'/>";
-//        var dom = "<img style='width: 100px;height: auto' src='" + "http://127.0.0.1:8080/images/abc.png" + "'/>";
-//        var dom = "<img style='width: 100px;height: auto' src='" + "http://127.0.0.1:8080/images/aqz.png" + "'/>";
-        var dom = "<img style='width: 100px;height: auto' src='" + "http://127.0.0.1:8080/images/架构大纲.png" + "'/>";
-        $("#container").append(dom);
+        for (var i = 0; i < img_arr.length; i++) {
+            var imgName = img_arr[i];
+            var dom = "<img style='width: 100px;height: auto' src='" + "http://127.0.0.1:8080/images/" + imgName + ".png" + "'/>";
+            $("#container").append(dom);
+        }
     }
 
 </script>

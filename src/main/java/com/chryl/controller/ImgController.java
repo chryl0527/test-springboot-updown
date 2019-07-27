@@ -19,7 +19,8 @@ public class ImgController {
     public Object show(HttpServletRequest request) {
 
         Map<String, Object> map = new HashMap<>();
-        map.put("data", "D:/test2/)0%JR1P2FU}17P1SN(`%$Q8.png");//imgurl
+        String[] arr = {"abc", "aqz", "架构大纲"};
+        map.put("data", arr);//imgurl
         map.put("status", "suc");
         return map;
     }
