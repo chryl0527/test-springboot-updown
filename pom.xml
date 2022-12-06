@@ -46,7 +46,7 @@
 		<dependency>
 			<groupId>commons-net</groupId>
 			<artifactId>commons-net</artifactId>
-			<version>3.6</version>
+			<version>3.9.0</version>
 		</dependency>
 		<!-- 图片上传静态文件虚拟路径的映射 -->
 		<dependency>
